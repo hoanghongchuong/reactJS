@@ -5,11 +5,32 @@ import Course from './components/Course'
 
 class App extends Component {
   render() {
+  	const items = [
+			{
+				name: 'ReactJS',
+				time: '30h',
+				free: true,
+				des: 'ReactJS is very simple'
+			},
+			{
+				name: 'AngularJS',
+				time: '50h',
+				free: false,
+				des: 'AngularJS is very simple'
+			},
+			{
+				name: 'NodeJS',
+				time: '30h',
+				free: true,
+				des: 'NodeJS is very simple'
+			}
+		];
+		const elementCourses = items.map((item, index) => {
+			return <Course key={index} name={item.name} time={item.time} free={item.free}> {item.des} </Course>
+		});
     return (
        	<div className="row">
-       		<Course />
-            <Course />
-            <Course />
+       		{elementCourses}
             
         </div>
     );
